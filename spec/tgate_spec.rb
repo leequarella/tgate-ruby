@@ -32,15 +32,14 @@ describe Tgate, vcr: true do
       security_code: "1234")
   end
 
-  let(:amount) { 1.01 }
+  let(:amount) { rand * 10 }
 
   let(:gateway_url) { "gatewaystage.itstgate.com" }
 
   describe "failed to connect" do
     context "no response", vcr: false do
       it "gives the proper result message" do
-        stub_request(:any, gateway_url)
-          .to_raise(StandardError)
+        stub_request(:any, gateway_url).to_raise(StandardError)
         response = Tgate.charge(valid_cc, amount, valid_creds)
         response.should_not be_approved
         response.result_message.should eq "Failed to connect to T-Gate."
@@ -48,7 +47,7 @@ describe Tgate, vcr: true do
     end
     context "invalid credentials" do
       it "gives the proper result message" do
-        response = Tgate.charge(invalid_cc, amount, valid_creds)
+        response = Tgate.charge(valid_cc, amount, invalid_creds)
         response.should_not be_approved
         response.result_message.should eq "Invalid Login Information 2"
       end

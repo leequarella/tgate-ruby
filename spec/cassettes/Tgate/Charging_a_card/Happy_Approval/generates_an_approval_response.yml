@@ -5,7 +5,7 @@ http_interactions:
     uri: https://gatewaystage.itstgate.com/SmartPayments/transact.asmx/ProcessCreditCard
     body:
       encoding: UTF-8
-      string: UserName=BCPr2626&Password=E4727lv1&TransType=Sale&CardNum=4012000033330026&ExpDate=1016&MagData=&NameOnCard=LeeMCardholder&Amount=1.01&INVnum=&Zip=&Street=&PNRef=&CVNum=&ExtData=
+      string: UserName=BCPr2626&Password=E4727lv1&TransType=Sale&CardNum=4012000033330026&ExpDate=1016&MagData=&NameOnCard=LeeMCardholder&Amount=0.18337901706436788&INVnum=&Zip=&Street=&PNRef=&CVNum=&ExtData=
     headers:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 22 Jul 2013 20:22:07 GMT
+      - Mon, 22 Jul 2013 20:43:39 GMT
       Content-Type:
       - text/xml; charset=utf-8
       Transfer-Encoding:
@@ -45,10 +45,9 @@ http_interactions:
       encoding: UTF-8
       string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Response xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
         xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"http://TPISoft.com/SmartPayments/\">\r\n
-        \ <Result>110</Result>\r\n  <RespMSG>Duplicate Transaction</RespMSG>\r\n  <Message>Duplicate
-        transaction</Message>\r\n  <PNRef>543743</PNRef>\r\n  <HostCode>543740</HostCode>\r\n
-        \ <GetGetOrigResult>OK072C</GetGetOrigResult>\r\n  <GetCommercialCard>False</GetCommercialCard>\r\n
-        \ <ExtData>CardType=VISA</ExtData>\r\n</Response>"
+        \ <Result>0</Result>\r\n  <RespMSG>Approved</RespMSG>\r\n  <Message>APPROVAL</Message>\r\n
+        \ <AuthCode>OK148C</AuthCode>\r\n  <PNRef>543761</PNRef>\r\n  <HostCode>543761</HostCode>\r\n
+        \ <GetCommercialCard>False</GetCommercialCard>\r\n  <ExtData>CardType=VISA</ExtData>\r\n</Response>"
     http_version: 
-  recorded_at: Mon, 22 Jul 2013 20:22:35 GMT
+  recorded_at: Mon, 22 Jul 2013 20:44:07 GMT
 recorded_with: VCR 2.5.0

@@ -23,16 +23,10 @@ gem "tgate"
     # via MSR
     cc = Tgate::CreditCard.from_swipe(<swipe_data>)
 
-    amount = Tgate::Amount.new(
-      total: <total amount to charge>,
-      tax: <amount of tax included in the total, optional>)
-
     creds = Tgate::Credentials.new(
-      account_id: <vm_account_id>,
-      user_id: <vm_user_id>,
-      pin: <vm_user_pass>,
-      demo: <boolean, optional>,
-      referer: <uri of the http referer, optional>)
+      UserName: <vm_account_id>,
+      Password: <vm_user_id>,
+      type: <:test, optional>)
 ```
 
 ###Charge, Refund, or Void
