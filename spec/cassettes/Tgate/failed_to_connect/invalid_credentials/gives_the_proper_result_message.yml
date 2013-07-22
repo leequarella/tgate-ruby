@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://gatewaystage.itstgate.com/SmartPayments/transact.asmx/ProcessCreditCard
+    body:
+      encoding: UTF-8
+      string: UserName=BCPr2626&Password=E4727lv1&TransType=Sale&CardNum=1234567890123456&ExpDate=0513&MagData=&NameOnCard=LeeMCardholder&Amount=1.01&INVnum=&Zip=&Street=&PNRef=&CVNum=&ExtData=
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 22 Jul 2013 20:22:06 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=5
+      Vary:
+      - Accept-Encoding
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 2.0.50727
+      Cache-Control:
+      - private, max-age=0
+      Set-Cookie:
+      - BNI__BARRACUDA_LB_COOKIE=0000000000000000000000001f07a8c00000bb01; Path=/;
+        Secure; HttpOnly
+      Server:
+      - ''
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Response xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"http://TPISoft.com/SmartPayments/\">\r\n
+        \ <Result>14</Result>\r\n  <RespMSG>Failed to validate credit card: Unknown
+        Card Type : </RespMSG>\r\n</Response>"
+    http_version: 
+  recorded_at: Mon, 22 Jul 2013 20:22:34 GMT
+recorded_with: VCR 2.5.0

@@ -1,0 +1,30 @@
+module Tgate
+  class PostParams
+    attr_reader :transaction_id, :creds, :transaction_type, :card
+    def initialize(info)
+      @transaction_id = info[:transaction_id]
+      @creds = info[:creds]
+      @transaction_type = info[:transaction_type]
+      @card = info[:card]
+
+      generate
+    end
+
+    def self.generate(card, amount, creds, transaction_type)
+      "UserName=   #{creds.UserName}
+       &Password=  #{cred.Password}
+       &TransType= #{}
+       &CardNum=   #{string}
+       &ExpDate=   #{string}
+       &MagData=   #{string}
+       &NameOnCard=#{string}
+       &Amount=    #{string}
+       &InvNum=    #{string}
+       &PNRef=     #{string}
+       &Zip=       #{string}
+       &Street=    #{string}
+       &CVNum=     #{string}
+       &ExtData=   #{string}"
+    end
+  end
+end
